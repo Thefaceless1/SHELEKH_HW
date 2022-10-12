@@ -50,7 +50,8 @@ console.log("((("+numberOne+"-"+numberTwo+")+"+numberThree+")*"+numberFour+")/"+
     ######
 ```*/
 let stairs = "#"
-for (let i = 0;i<6;i++) {
+const iterationsCount = 6;
+for (let i = 0;i<iterationsCount;i++) {
     console.log(stairs);
     stairs+="#";
 }
