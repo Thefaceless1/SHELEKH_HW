@@ -11,7 +11,6 @@ for ( let i of someText) {
     if (!isNaN(+i)) {
         totalCount+=+i;
     }
-    else continue;
 }
 console.log("Сумма цифр в тексте: " + totalCount);
 
