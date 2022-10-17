@@ -51,51 +51,32 @@ function myProgram () {
     } else if (numberFromMenu === 3) {
         console.clear();
         let numberOrString = readline4.question("Введите строку (от 5 до 15 символов) или число (от 5 до 15):\n");
-        const numberOrStringLength: number= numberOrString.length;
-        console.clear();
-        if (!isNaN(+numberOrString) && +numberOrString<=15) {
-            numberOrString = Math.round(Math.random()*(+numberOrString-1) +1);
+        let numericInput = +numberOrString;
+        let messageToAsk = "Угадайте букву:\n";
+        let maxIndex = numberOrString.length > 15 ? 15 : numberOrString.length;
+        let hiddenValue = numberOrString[Math.round(Math.random() * maxIndex)];
+        let userChoice;
+
+        if (!isNaN(numericInput)) {
+            messageToAsk = 'Угадайте число\n';
+            maxIndex = numericInput > 15 ? 15 : numericInput;
+            hiddenValue = Math.round(Math.random() * (maxIndex - 1) + 1).toString();
         }
-        else if (!isNaN(+numberOrString) && +numberOrString>15) {
-            numberOrString = Math.round(Math.random()*(15-1) +1);
-        }
-        else if (isNaN(+numberOrString) && numberOrString.length<=14) {
-            numberOrString = numberOrString[Math.round(Math.random()*(numberOrString.length))];
-        }
-        else if (isNaN(+numberOrString) && numberOrString.length>14) {
-            numberOrString = numberOrString[Math.round(Math.random()*14)];
-        }
-        else;
-        switch (true) {
-            case !isNaN(+numberOrString) : {
-                for (let i = 1; i<=Math.ceil(numberOrString/3); i++){
-                    let enteredNumber = (i==1) ? readline4.question ("Угадайте число:\n") : readline4.question("А вот и нет. Еще варианты?\n");
-                    if (enteredNumber == numberOrString){
-                        console.log("Поздравляем, Вы выиграли");
-                        break;
-                    }
-                    else if (i == Math.ceil(numberOrString/3)) {
-                        console.clear();
-                        console.log("В этот раз как-то не удалось, заходите еще");
-                    }
-                    else continue;
-                }
-                break;
-            }
-            case isNaN(+numberOrString) : {
-                for (let c = 1;c<=Math.ceil(numberOrStringLength/3); c++) {
-                    let enteredString = (c==1) ? readline4.question ("Угадайте букву в строке:\n") : readline4.question("А вот и нет. Еще варианты?\n");
-                    if (enteredString==numberOrString) {
-                        console.log("Поздравляем, Вы выиграли");
-                        break;
-                    }
-                    else if (c == Math.ceil(numberOrStringLength/3)) {
-                        console.clear();
-                        console.log("В этот раз как-то не удалось, заходите еще");
-                    }
-                    else continue;
-                }
-            }
+        console.log(hiddenValue);
+
+        let attempts = Math.ceil(maxIndex / 3);
+        console.log(attempts);
+        for(let i =1; i<=attempts;i++) {
+        userChoice = (i==1) ? readline4.question (messageToAsk) : readline4.question("А вот и нет. Еще варианты?\n");
+         if (userChoice == hiddenValue) {
+             console.log("Поздравляем, Вы выиграли");
+             break;
+}
+         else if (i == attempts) {
+             console.clear();
+             console.log("В этот раз как-то не удалось, заходите еще");
+             break;
+         }
         }
     }
     else {
