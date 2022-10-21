@@ -4,6 +4,6 @@
     Функция должна возвращать **true**, если треугольник можно построить со сторонами заданной длины, и **false** в любом другом случае.*/
 
  function triangle (a:number, b:number,c:number) {
-     return (a+b>c && a+c>b && b+c>a) ? true : false;
+     return a+b>c && a+c>b && b+c>a;
  }
  console.log (triangle(5,3,6));

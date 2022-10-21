@@ -8,11 +8,14 @@
 const countYears = 5;
 const percentPerYear = 17;
 let overpayment = 0;
+const countMonth = countYears*12
 function creditCalculator (sumCredit:number) {
-for (let i = 1 ; i<=countYears ; i++) {
-    overpayment += sumCredit * (percentPerYear/100);
+    const paymentPerMonth = sumCredit / countMonth;
+for (let i = 1 ; i<=countMonth ; i++) {
+    overpayment += sumCredit * (percentPerYear/100) / 12;
+    sumCredit -= paymentPerMonth;
 }
 return overpayment;
 }
 
-console.log(creditCalculator(100));
+console.log(creditCalculator(1000));

@@ -5,7 +5,7 @@
 let sumDigits = 0;
 function getSumNumbers (enteredNumber: number | string) {
     enteredNumber = String(enteredNumber);
-    for ( let i of enteredNumber) {
+    for ( const i of enteredNumber) {
         sumDigits+=+i;
     }
     return sumDigits;
