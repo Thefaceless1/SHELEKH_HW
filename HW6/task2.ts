@@ -8,5 +8,5 @@ const objTask2 = {
 }
 
 if ("key1" in objTask2) {
-    console.log(true);
+    console.log("key1" in objTask2);
 }
