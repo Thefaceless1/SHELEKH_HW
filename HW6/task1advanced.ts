@@ -52,27 +52,25 @@ if (goalsTeam1>9 || goalsTeam2>9 || (goalsTeam1!=goalsTeam2 && "penalty" in inco
     return resultMatch;
 }
 else if (!("penalty" in incomingMatchData)){
+    console.clear();
+    resultMatch = `Команда ${teamOne} забила голов: ${goalsTeam1}\nКоманда ${teamTwo} забила голов:${goalsTeam2}\nРезультат:`
     switch (true){
     case goalsTeam1 == goalsTeam2 : {
-        console.clear();
-        resultMatch = `Команда ${teamOne} забила голов: ${goalsTeam1}\nКоманда ${teamTwo} забила голов:${goalsTeam2}\nРезультат: Ничья`;
+        resultMatch += "Ничья";
         return resultMatch;
     }
     default : {
-        console.clear();
-        resultMatch = (goalsTeam1>goalsTeam2) ? `Команда ${teamOne} забила голов: ${goalsTeam1}\nКоманда ${teamTwo} забила голов: ${goalsTeam2}\nРезультат: Победа команды ${teamOne}` :
-            `Команда ${teamOne} забила голов: ${goalsTeam1}\nКоманда ${teamTwo} забила голов:${goalsTeam2}\nРезультат: Победа команды ${teamTwo}`;
+        resultMatch += (goalsTeam1>goalsTeam2) ?  `Победа команды ${teamOne}` :
+            `Победа команды ${teamTwo}`;
         return  resultMatch;
     }
     }
 }
 else {
     console.clear();
-resultMatch =(penaltyTeam1>penaltyTeam2) ?
-    `Команда ${teamOne} забила голов: ${goalsTeam1}\nКоманда ${teamTwo} забила голов: ${goalsTeam2}
-Пенальти команда ${teamOne}: ${penaltyTeam1}\nПенальти команда ${teamTwo}: ${penaltyTeam2}\nРезультат: Победа команды ${teamOne}` :
-    `Команда ${teamOne} забила голов: ${goalsTeam1}\nКоманда ${teamTwo} забила голов: ${goalsTeam2}
-Пенальти команда ${teamOne}: ${penaltyTeam1}\nПенальти команда ${teamTwo}: ${penaltyTeam2}\nРезультат: Победа команды ${teamTwo}`
+    resultMatch = `Команда ${teamOne} забила голов: ${goalsTeam1}\nКоманда ${teamTwo} забила голов: ${goalsTeam2}
+Пенальти команда ${teamOne}: ${penaltyTeam1}\nПенальти команда ${teamTwo}: ${penaltyTeam2}\nРезультат:`
+resultMatch+=(penaltyTeam1>penaltyTeam2) ? `Победа команды ${teamOne}` : `Победа команды ${teamTwo}`;
     return resultMatch;
 }
 

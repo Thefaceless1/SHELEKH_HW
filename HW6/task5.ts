@@ -22,16 +22,14 @@ let salaries = {
     alexandra: 199
 }
 let sumSalary =0 ;
-let iterationsCountTask5 = 0 ;
 let averageSalaries ;
 
 function getAverageSalaries () {
     for (const i in salaries) {
         const key = i as keyof typeof salaries;
         sumSalary+=salaries[key];
-        iterationsCountTask5++;
     }
-    averageSalaries = sumSalary/iterationsCountTask5;
+    averageSalaries = sumSalary/Object.keys(salaries).length;
     return averageSalaries;
 }
 
