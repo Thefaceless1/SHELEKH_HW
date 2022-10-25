@@ -10,26 +10,21 @@
     getSum(-1, 0) == -1 // -1 + 0 = -1
     getSum(-1, 2) == 2  // -1 + 0 + 1 + 2 = 2
 ```*/
-let sum = 0;
+
 function getSum (a: number, b: number) {
-    let difference: number;
+    let sum = 0;
     if (a<b) {
-        difference = b-a;
-        for (let i = 0 ; i <= difference ; i++) {
+        for (sum ; a<=b ; a++) {
             sum +=a;
-            a++;
         }
         return sum;
     }
-    else if (a>b) {
-        difference = a-b;
-        for (let i = 0; i<=difference ; i++) {
+    else  {
+        for (sum; b<=a ; b++) {
             sum+=b;
-            b++;
         }
         return sum;
     }
-    else return a;
 }
 
-console.log(getSum(1,5));
+console.log(getSum(4,-1));

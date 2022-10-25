@@ -10,8 +10,8 @@
 */
 
 
-function fooboo (param: any){
-    if (param==true) {
+function fooboo (param: boolean, funcFoo : Function , funcBoo : Function ){
+    if (param) {
         foo();
     }
     else {
@@ -24,4 +24,4 @@ function foo()   {
 function boo() {
     return console.log("boo");
 }
-fooboo(foo);
+fooboo(false,foo,boo);

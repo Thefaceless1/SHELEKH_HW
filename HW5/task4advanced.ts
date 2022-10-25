@@ -9,17 +9,19 @@ function task4Func () {
     const firstNumber = +enteredDataAsArray[0].replace(",",".");
     const secondNumber = +enteredDataAsArray[1].replace(",",".");
     const mathOperation = enteredDataAsArray[2];
-    let result :number ;
+    let result :number =0;
     if (!isNaN(firstNumber) && !isNaN(secondNumber) && secondNumber !=0  && enteredDataAsArray.length==3 && (mathOperation == "+" ||
         mathOperation == "-" || mathOperation =="*" || mathOperation == "!" || mathOperation == "/" || mathOperation == "%")) {
         switch (mathOperation) {
-            case "+" :{result =firstNumber + secondNumber;console.clear(); return console.log(`Результат: ${result}`);}
-            case "-" :{result =firstNumber - secondNumber;console.clear(); return console.log(`Результат: ${result}`);}
-            case "*" :{result =firstNumber * secondNumber;console.clear(); return console.log(`Результат: ${result}`);}
-            case "!" :{result =firstNumber+mathOperation+secondNumber;console.clear(); return console.log(`Результат: ${result}`);}// не очень понятно что делать если пользователь выбрал "!"
-            case "/" :{result =firstNumber / secondNumber;console.clear(); return console.log(`Результат: ${result}`);}
-            case "%" :{result =firstNumber % secondNumber;console.clear(); return console.log(`Результат: ${result}`);}
+            case "+" :result =firstNumber + secondNumber;break;
+            case "-" :result =firstNumber - secondNumber;break;
+            case "*" :result =firstNumber * secondNumber;break;
+            case "!" :result =firstNumber+mathOperation+secondNumber;break;
+            case "/" :result =firstNumber / secondNumber;break;
+            case "%" :result =firstNumber % secondNumber;
         }
+        console.clear();
+        return console.log(`Результат: ${result}`)
     }
     else {
         console.clear();
