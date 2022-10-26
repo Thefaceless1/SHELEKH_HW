@@ -26,8 +26,7 @@ const averageSum  = matrix.reduce(function (previousValue, currentValue): any  {
         currentSum+=value
         iterationForEach++;
     })
-previousValue= currentSum/iterationForEach;
-return previousValue
+return currentSum/iterationForEach;
 },0)
 
 console.log(averageSum);

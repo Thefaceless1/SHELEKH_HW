@@ -6,7 +6,7 @@
 чисел > 100
  */
 const randomArr = [5,3,"word",103,"Work",400,"name",100,"5w"];
-let index : number[] =[];
+const index : number[] =[];
 const sumIndex = randomArr.reduce(function (previousValue, currentValue, currentIndex, array): any {
 if (currentValue>100 || String(currentValue).includes("w")){
     previousValue = +previousValue + currentIndex;
