@@ -19,9 +19,9 @@ class Task3Class {
 
     static get getMostPopSymbol() {
         let collectionSymbols = new Map();
-        for (let i = 0; i < Task3Class.str.length; i++) {
-            if (!(Task3Class.str[i] in Object.fromEntries(collectionSymbols))) collectionSymbols.set(Task3Class.str[i], 1);
-            else collectionSymbols.set(Task3Class.str[i], collectionSymbols.get(Task3Class.str[i]) + 1);
+        for (let i = 0; i < this.str.length; i++) {
+            if (!(this.str[i] in Object.fromEntries(collectionSymbols))) collectionSymbols.set(this.str[i], 1);
+            else collectionSymbols.set(this.str[i], collectionSymbols.get(this.str[i]) + 1);
         }
         let mostPopSymbol = "";
         let symbolCount = 0;
@@ -35,16 +35,16 @@ class Task3Class {
     }
 
     static methodPart2(paramNum?: number) {
-        let num = (paramNum != undefined) ? Task3Class.classNum - paramNum : Task3Class.classNum;
+        let num = (paramNum != undefined) ? this.classNum - paramNum : this.classNum;
         let reversedString = (num>0) ?
-            Task3Class.str.
+            this.str.
             split("").
             slice(0, num).
             reverse().
-            join("")+Task3Class.str.
+            join("")+this.str.
             slice(num) :
-            Task3Class.str.
-            slice(0,Task3Class.str.length+num) + Task3Class.str.
+            this.str.
+            slice(0,this.str.length+num) + this.str.
             split("").
             slice(num).
             reverse().
