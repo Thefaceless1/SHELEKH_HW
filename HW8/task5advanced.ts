@@ -12,17 +12,26 @@
 const johnData : any =  { name : 'John', reviews:new Map([['Mark', 5.8], ['Joshua', 9.3]])};
 const bobData : any = { name : 'Bob', reviews:new Map([['Mark', 5.9], ['Joshua', 9.0]])};
 const thomasData : any = { name : 'Thomas', reviews: new Map([['Mark', 4], ['Joshua', 10]])};
-const reviewsPower : any = new Map([['Mark', 7], ['Joshua', 8]]);
-const results : (number | string)[] =[];
-function getWinner () {
-    const johnResult  = (johnData.reviews.get("Mark") * (reviewsPower.get("Mark")/10)) + (johnData.reviews.get("Joshua") * (reviewsPower.get("Joshua")/10));
-    const bobResult = (bobData.reviews.get("Mark") * (reviewsPower.get("Mark")/10)) + (bobData.reviews.get("Joshua") * (reviewsPower.get("Joshua")/10));
-    const thomasResult = (thomasData.reviews.get("Mark") * (reviewsPower.get("Mark")/10)) + (thomasData.reviews.get("Joshua") * (reviewsPower.get("Joshua")/10));
-    results.push(johnData.name, johnResult,bobData.name,bobResult,thomasData.name,thomasResult);
-    let winner: number | string ="";
-    results.forEach(function (value,index){
-        if (index%2 !=0 && value == Math.max(johnResult,bobResult,thomasResult)) winner = results[index-1];
-    })
- return winner;
+let reviewsPower : any = new Map([['Mark', 7], ['Joshua', 8]]);
+
+function getWinner (...candidates: any) {
+    let maxResult =0;
+    let winner ='';
+    reviewsPower = Array.from(reviewsPower);
+for (let c = 1; c<=candidates.length; c++) {
+    let notesArr  = candidates[c-1].reviews;
+    notesArr = Array.from(notesArr);
+    let resultCurrentCandidate = 0;
+    for (let i=0; i<reviewsPower.length;i++) {
+        resultCurrentCandidate += (reviewsPower[i][1]/10)*notesArr[i][1];
+    }
+    if (maxResult<resultCurrentCandidate) {
+        maxResult = resultCurrentCandidate;
+        winner = candidates[c-1].name;
+    }
+    else continue;
 }
-console.log(getWinner());
+return [winner,maxResult];
+
+}
+console.log(getWinner(thomasData,bobData,johnData))
