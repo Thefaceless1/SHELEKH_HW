@@ -18,7 +18,9 @@
   "homepage": "https://github.com/Thefaceless1/SHELEKH_HW#readme",
   "dependencies": {
     "@types/node": "^18.8.3",
+    "node-fetch": "^3.2.10",
     "readline-sync": "^1.4.10",
     "ts-node": "^10.9.1"
-  }
+  },
+  "type": "module"
 }
