@@ -9,7 +9,7 @@
 + Вывести полученный результат в консоль*/
 import fetch from "node-fetch";
 
-type data = {
+type TData = {
     userId: number,
     id: number,
     title: string,
@@ -22,7 +22,7 @@ function getTodos () : any {
 }
 
 async function getTasks (userId: number , taskStatus : boolean) {
-    const getData : data = await getTodos()
+    const getData : TData = await getTodos()
     const result: { id: number; title: string; }[] = [];
     getData.forEach(value => {
         if (value.userId ==  userId && taskStatus == value.completed) result.push({id:value.id,title:value.title});

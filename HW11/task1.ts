@@ -16,7 +16,7 @@
 
 import fetch from "node-fetch";
 
-type postData = {
+type TPostData = {
     userId: number,
     id: number,
     title: string,
@@ -30,7 +30,7 @@ async function getSelectedPosts (...num: number[]) {
     const post : Promise<any> = response.json().then(value  => value);
     if (response.ok == true) {
         for (const i of num) {
-            result.push(await post.then((value : postData) => value[i-1]));
+            result.push(await post.then((value : TPostData) => value[i-1]));
         }
         return result
     }
@@ -45,5 +45,5 @@ getSelectedPosts(15,23,7,3).then(value => console.log(value));
 // 2 вариант примитивный
 fetch('https://jsonplaceholder.typicode.com/posts').
     then((value : any) => value.json(), error => console.log(error)).
-    then((value : postData)  => console.log([value[14],value[22],value[12],value[3]]));
+    then((value : TPostData)  => console.log([value[14],value[22],value[12],value[3]]));
 
