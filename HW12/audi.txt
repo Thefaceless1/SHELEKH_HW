@@ -1,0 +1,1 @@
+basic - 20000, standard - 35000, business - 50000, luxury - 80000;
