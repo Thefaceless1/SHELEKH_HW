@@ -1,0 +1,54 @@
+//smoke checklist :
+1. The presence of all elements on the main page - Priority:high
+2. Login in the system - Priority:high
+3. Registration in the system - Priority:high
+4. Adding  books to the shopping cart - Priority:high
+
+//Critical path checklist:
+1. Login with incorrect data - Priority:high
+2. Search functionality - Priority:normal
+3. Incorrect data in "Zip-code" field (with more and less than 5 digits,words,symbols,empty) - Priority:high
+
+//Extended checklist:
+1. Text color in the field "Price" on homepage - Priority:low
+2. Size pictures of books on homepage - Priority:low
+3. Displaying a red indicator on the shopping cart icon after adding an item - Priority:normal
+
+
+//Test cases:
+Number : 1
+Priority: high
+Module: main page
+Description : The presence of all elements on the main page
+Steps:                                                                Expected result :
+1. Go to https://www.sharelane.com/cgi-bin/main.py                    1.Main page is opened
+2. Check The presence of all elements on the main page                2.All the elements described in the requirements are present on the page
+
+Number : 2
+Priority: high
+Module: login
+Description : Login in the system
+Steps:                                                                Expected result :
+1. Go to https://www.sharelane.com/cgi-bin/main.py                    1. Main page is opened
+2. Fill the fields with data: email : test@mail.ru, password:1234     2. Entered data is displayed in the fields
+3. Click on the "Login" button                                        3. The user is authorized in the system
+
+Number : 3
+Priority: high
+Module: registration
+Description : Incorrect data in "Zip-code" field
+Steps:                                                                Expected result :
+1. Go to https://www.sharelane.com/cgi-bin/main.py                    1. Main page is opened
+2. Click on the "Sign-up" button                                      2. Sign up page with elements  "ZIP code" -text field(required to fill), "Continue" - button, is opened
+3. Fill the field "ZIP-code" with incorrect data:                     3. Error with text "Oops, error on page. ZIP code should have 5 digits" is displayed on the page
+(with more and less than 5 digits,words,symbols,empty)
+and click on the "Continue" button
+
+Number : 4
+Priority: low
+Module: main page
+Description : Size pictures of books on homepage
+Steps:                                                                Expected result :
+1. Go to https://www.sharelane.com/cgi-bin/main.py                    1. Main page is opened
+2. click "Ctrl+Shift+C" on the keyboard                               2. Element inspector is activated
+3. Move mouse cursor to the picture of the book                       3.Size of the picture must be "116х150px"
