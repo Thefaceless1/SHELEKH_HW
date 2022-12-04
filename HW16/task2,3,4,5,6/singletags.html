@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel = "stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Основные тэги HTML. Одиночные</title>
+</head>
+<body>
+<header>
+  <h1 class="title">Homework</h1>
+  <a href="menu.html"><button name="Menu">Меню</button></a>
+  <fieldset id="group1">
+    <input type="radio" value="value1" name="group1">
+    <input type="radio" value="value2" name="group1">
+  </fieldset>
+</header>
+<table><h2 class="description">Основные тэги HTML. Одиночные</h2>
+  <th class="firstTitle">Тэг</th>
+  <th class="otherTitle">Описание</th>
+  <th class="otherTitle">Особенности</th>
+  <tr>
+    <td>&ltimg&gt</td>
+    <td>Изображение</td>
+    <td>Атрибут src содержит url, откуда берется картинка. Атрибут alt содержит текст, который указывает, что будет выведено при отсутствии картинки</td>
+  </tr>
+  <tr>
+    <td>&ltinput&gt</td>
+    <td>Элемент каких-либо действий</td>
+    <td>Атрибут value указывает начальное значение поля .Атрибут type указывает, какой тип будет у элемента</td>
+  </tr>
+  <tr>
+    <td>&ltbr&gt</td>
+    <td>Переход на новую строку</td>
+    <td>Единичное использование не работает перед элементами, которые автоматически располагаются на новой строке (например div и p)</td>
+  </tr>
+  <tr>
+    <td>&ltlink&gt</td>
+    <td>Используется для загрузки в документ других файлов</td>
+    <td>Используется в &lthead&gt>. Атрибут rel отвечает за тип загружаемого файла. Атрибут href содержит относительный либо абсолютный путь к файлу</td>
+  </tr>
+  <tr>
+    <td>&lta&gt</td>
+    <td>Ссылка</td>
+    <td>Может содержать закрывающийся тег, текст между тегами будет названием ссылки. Атрибут href содержит адрес, куда будет указывать ссылка</td>
+  </tr>
+</table>
+<script src="script.js"></script>
+</body>
+</html>
