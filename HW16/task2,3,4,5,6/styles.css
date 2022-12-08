@@ -1,0 +1,28 @@
+title, table {
+    margin: auto;
+}
+th {
+    background-color: black;
+    color: aliceblue;
+}
+h2,header {
+    text-align: center;
+}
+img {
+    width: 50px;
+    height: 50px;
+}
+.otherTitle{
+    width: 300px;
+}
+.firstTitle {
+    width: 60px;
+}
+
+tr:nth-of-type(2n) {
+    background-color: darkgrey;
+}
+
+tr:nth-of-type(2n+1) {
+    background-color: gainsboro;
+}
