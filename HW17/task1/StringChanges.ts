@@ -73,4 +73,4 @@ export class StringChanges {
     }
 }
 
-console.log(StringChanges.getSubstr("str with somstre subs in str","str"));
+console.log(StringChanges.stringReverse("string",[3,4,2],[1,0,1]));
