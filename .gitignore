@@ -3,3 +3,6 @@
 /bot
 new.ts
 /coverage
+/test-results/
+/playwright-report/
+/playwright/.cache/
