@@ -23,9 +23,9 @@ describe("Проверка страницы каталога онлайнера"
         await driver.manage().window().maximize();
         await driver.get("https://catalog.onliner.by/")
     })
-    afterEach(async () => {
+    /*afterEach(async () => {
         await driver.quit();
-    })
+    })*/
 
     test("Список наименований меню каталога",async () => {
         const catalogMenu = await driver.findElements(By.xpath("//*[@class='catalog-navigation-classifier__item-title-wrapper']"));
@@ -50,7 +50,7 @@ describe("Проверка страницы каталога онлайнера"
             expect(await i.getAttribute("href")).toBe(SocialMediaUrl[index]);
         }
     })
-    test("Список источников поиска в окне поиска",async () => {
+    test.only("Список источников поиска в окне поиска",async () => {
         const searchInput = await driver.findElement(By.xpath("//input[@class='fast-search__input']"));
         await driver.actions().click(searchInput).sendKeys("hello").perform();
         const searchSourceList = await driver.findElements(By.xpath("//*[contains(@class,'search__tabs-item')]"));
